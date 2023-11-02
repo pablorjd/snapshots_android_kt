@@ -1,11 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "space.pablorjd.snapshots"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "space.pablorjd.snapshots"
@@ -33,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -44,4 +50,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // Glide
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    kapt ("com.github.bumptech.glide:compiler:4.14.2")
 }
