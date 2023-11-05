@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "618162903856",
+    "project_id": "snapshots-426d0",
+    "storage_bucket": "snapshots-426d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618162903856:android:38ff648b9a152035a446f5",
+        "android_client_info": {
+          "package_name": "space.pablorjd.snapshots"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTbkS0wzwG9xeGLOkxXHBzSbNsvJl7BqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
