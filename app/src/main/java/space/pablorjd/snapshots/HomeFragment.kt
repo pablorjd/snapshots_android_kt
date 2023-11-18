@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -21,6 +23,7 @@ import space.pablorjd.snapshots.databinding.ItemSnapshotBinding
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var mFirebaseAdapter: FirebaseRecyclerAdapter<Snapshot,SnapshotHolder>
+    private lateinit var mLayoutManager: RecyclerView.LayoutManager
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,6 +74,23 @@ class HomeFragment : Fragment() {
             }
 
         }
+        mLayoutManager = LinearLayoutManager(context)
+
+        binding.recyclearView.apply {
+            setHasFixedSize(true)
+            layoutManager = mLayoutManager
+            adapter = mFirebaseAdapter
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mFirebaseAdapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mFirebaseAdapter.stopListening()
     }
 
 

@@ -42,7 +42,6 @@
         android:id="@+id/imgPhoto"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/design_default_color_secondary"
         android:layout_marginTop="@dimen/common_padding_min"
         app:layout_constraintDimensionRatio="H, 4:3"
         app:layout_constraintStart_toStartOf="parent"
